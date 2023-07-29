@@ -65,7 +65,7 @@ resource "aws_iam_instance_profile" "profile" {
 resource "aws_instance" "ec2" {
   ami           = "ami-040d60c831d02d41c"
   instance_type = "t3.large"
-  key_name = "stockholm.pem"
+  key_name = "stockholm"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   iam_instance_profile = aws_iam_instance_profile.profile.name
   user_data = <<EOF
