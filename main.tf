@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "-policy"
+  name        = "-policy111"
   description = "My test policy"
 
   policy = <<EOT
@@ -33,7 +33,7 @@ EOT
 }
 
 resource "aws_iam_role" "role" {
-  name = "s3-access-to-ec2-role"
+  name = "s3-access-to-ec2-role111"
 
   assume_role_policy = <<EOF
 {
@@ -58,7 +58,7 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 }
 
 resource "aws_iam_instance_profile" "profile" {
-  name = "profile"
+  name = "profile111"
   role = aws_iam_role.role.name
 }
 
